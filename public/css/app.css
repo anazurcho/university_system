@@ -1,0 +1,30 @@
+.cont {
+    top: 60px;
+    margin: auto;
+    width: 50%;
+}
+
+.cont-1 {
+    top: 60px;
+    margin: 60px auto;
+    width: 80%;
+}
+
+.marg_1 {
+    margin: 40px;
+}
+
+.marg_2 {
+    margin: 10px;
+}
+
+.right-nav {
+    width: 15%;
+    height: 100%;
+}
+.marg-3{
+    margin-top:40px!important;
+}
+.marg-4{
+    margin-top:30px!important;
+}
