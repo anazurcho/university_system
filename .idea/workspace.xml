@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1fcc7688-32f2-455c-b720-5fc1e88d87de" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Models/Lecture.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Models/Schedule.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Models/StudentShell.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Course.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Models/Course.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Models/User.php" afterDir="false" />
-    </list>
+    <list default="true" id="1fcc7688-32f2-455c-b720-5fc1e88d87de" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -172,7 +166,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1609977548626</updated>
-      <workItem from="1609977549690" duration="3293000" />
+      <workItem from="1609977549690" duration="3626000" />
     </task>
     <servers />
   </component>
