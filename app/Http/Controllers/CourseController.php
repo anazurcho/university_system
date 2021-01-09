@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\course_requests\CourseRequest;
+use App\Http\Requests\course_requests\CourseEditRequest;
 use App\Models\Course;
 use App\Models\Lecture;
 use Illuminate\Http\Request;
@@ -27,7 +29,7 @@ class CourseController extends Controller
         return view('course/create');
     }
 
-    public function save(Request $request)
+    public function save(CourseRequest $request)
     {
         $course = new Course($request->all());
         $course->save();
@@ -45,7 +47,7 @@ class CourseController extends Controller
         return view("course/edit", compact('course'));
     }
 
-    public function update(Request $request, Course $course)
+    public function update(CourseEditRequest $request, Course $course)
     {
         $course->update($request->all());
         return redirect()->action([CourseController::class, 'index']);

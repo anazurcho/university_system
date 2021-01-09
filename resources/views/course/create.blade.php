@@ -7,6 +7,9 @@
                     <label for="name">Course Name</label>
                     <input type="text" class="form-control @error('name') is-invalid @enderror" placeholder="name"
                            name="name"/>
+                    @error('name')
+                    <p class="text-danger">{{$errors->first('name')}}</p>
+                    @enderror
                 </div>
             </div>
             <input type="hidden" name="_token" id='csrf_toKen' value="{{ csrf_toKen() }}">

@@ -9,7 +9,10 @@
                 <div class="form-group">
                     <h3>{{$course->name}}</h3>
                     <label>name</label>
-                    <input type="text" class="form-control" name="name" value="{{old('name', $course->name)}}">
+                    <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{old('name', $course->name)}}">
+                    @error('name')
+                    <p class="text-danger">{{$errors->first('name')}}</p>
+                    @enderror
                     <input type="hidden" name="_token" id='csrf_toKen' value="{{ csrf_toKen() }}">
                     <div class="box-footer marg_1">
                         <button type="submit" class="btn btn-primary">Save</button>

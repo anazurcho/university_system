@@ -2,14 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1fcc7688-32f2-455c-b720-5fc1e88d87de" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7652789a-7332-42e8-9442-3a54c4b5d08d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7652789a-7332-42e8-9442-3a54c4b5d08d.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CourseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CourseController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/course/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/course/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/course/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/course/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/create.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -132,7 +139,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DatabaseDriversLRU" value="mongo&#10;mariadb" />
+    <property name="DatabaseDriversLRU" value="mongo&#10;mariadb&#10;mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -146,6 +153,9 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Http/Requests/course_requests" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/database" />
@@ -169,6 +179,8 @@
       <option name="presentableId" value="Default" />
       <updated>1609977548626</updated>
       <workItem from="1609977549690" duration="5227000" />
+      <workItem from="1610037588630" duration="857000" />
+      <workItem from="1610199787602" duration="1002000" />
     </task>
     <servers />
   </component>
@@ -176,13 +188,15 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="914" y="281" width="804" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1609982905052">
-      <screen x="0" y="0" width="3840" height="1048" />
+    <state x="457" y="281" width="783" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1610200133446">
+      <screen x="0" y="0" width="1920" height="1048" />
     </state>
+    <state x="457" y="281" width="783" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1048@0.0.1920.1048" timestamp="1610200133446" />
     <state x="914" y="281" width="804" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.3840.1048@0.0.3840.1048" timestamp="1609982905052" />
-    <state x="693" y="283" width="528" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1609980346280">
-      <screen x="0" y="0" width="3840" height="1048" />
+    <state x="347" y="283" width="528" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1610200470323">
+      <screen x="0" y="0" width="1920" height="1048" />
     </state>
+    <state x="347" y="283" width="528" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1048@0.0.1920.1048" timestamp="1610200470323" />
     <state x="693" y="283" width="528" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.3840.1048@0.0.3840.1048" timestamp="1609980346280" />
   </component>
 </project>
