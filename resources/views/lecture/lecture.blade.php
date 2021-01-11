@@ -1,6 +1,7 @@
 @extends("layout.layout")
 @section("content")
     <div class="container marg-3" align="center">
+        @can('student')
         <h3 class="text-danger">Lecture - {{$lecture->name}}</h3>
         <table class="table">
             <tr class="table-success">
@@ -22,6 +23,7 @@
             @endforeach
             </tbody>
         </table>
+        @endcan
         @can('admin')
             <div class="card mb-3 marg-4 " style="max-width: 18rem;">
                 <form method="post" enctype="multipart/form-data" action="{{route('save.schedule')}}">
@@ -62,7 +64,11 @@
             </div>
         @endcan
         @can('student')
-            <h3 class="text-danger">My Score - {{$my_score->total_score}}</h3>
+            @if($my_score)
+                <td><h3 class="text-danger">My Score - {{$my_score->total_score}}</h3></td>
+            @else
+                <td></td>
+            @endif
         @endcan
         @can('lecturer')
             <div style="align-items:center;"> {{ $student_shells->links('vendor.pagination.bootstrap-4') }} </div>

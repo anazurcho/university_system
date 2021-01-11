@@ -1,13 +1,23 @@
 @extends("layout.layout")
 @section("content")
     <div class="container marg-3" align="center">
-        @can('admin', Auth::user())
-            <div style="margin-bottom:20px; align-items:center;">
-                <button type="button" class="btn btn-info">
-                    <a class=" text-white" href="{{route('course.create')}}">
-                        add course
-                    </a>
-                </button>
+        @can('admin')
+            <div class="nav navbar-collapse ">
+                <div style="margin-bottom:20px; align-items:center;" class="mr-sm-2">
+                    <button type="button" class="btn btn-info">
+                        <a class=" text-white" href="{{route('course.create')}}">
+                            add course
+                        </a>
+                    </button>
+                </div>
+
+                <div style="margin-bottom:20px; align-items:center;" class="mr-sm-2">
+                    <button type="button" class="btn btn-info">
+                        <a class=" text-white" href="{{route('all_course_tags')}}">
+                            see course tags
+                        </a>
+                    </button>
+                </div>
             </div>
         @endcan
         <div style="align-items:center;"> {{ $courses->links('vendor.pagination.bootstrap-4') }} </div>

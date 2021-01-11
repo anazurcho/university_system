@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CourseTagController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LectureController;
@@ -83,6 +84,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/schedules', [ScheduleController::class, 'index'])->name('all_schedules');
     Route::get('/schedules/create', [ScheduleController::class, 'create'])->name('create.schedule');
     Route::post('/schedules/save', [ScheduleController::class, 'save'])->name('save.schedule');
+
+    Route::get('/course_tags', [CourseTagController::class, 'index'])->name('all_course_tags');
+    Route::get('/course_tags/create', [CourseTagController::class, 'create'])->name('create.course_tag');
+    Route::post('/course_tags/save', [CourseTagController::class, 'save'])->name('save.course_tag');
+    Route::get('/course_tags/{course_tag}', [CourseTagController::class, 'course_tag'])->name('course_tag');
 
 });
 

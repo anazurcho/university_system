@@ -3,6 +3,29 @@
     <div class="container marg-3 " align="center">
         <div>
             <h3>{{$course->name}}</h3>
+            <div>
+                @foreach($course -> course_tags -> pluck('name') as $course_tags)
+                    #{{ $course_tags }}
+                @endforeach
+            </div>
+            <div class="nav navbar-collapse ">
+                @can('admin')
+                    <button type="button" class="btn btn-info mr-sm-2">
+                        <a class="text-white" href="{{route('edit.course', $course->id)}}">
+                            edit
+                        </a>
+                    </button>
+                    <form method="post" action="{{route('delete.course', $course->id)}}" class="mr-sm-2">
+                        @csrf
+                        @method("DELETE")
+                        <button type="submit" class="btn btn-info">
+                                    <span class="text-white">
+                                        delete
+                                    </span>
+                        </button>
+                    </form>
+                @endcan
+            </div>
             <div class="container marg-3" align="center">
                 <div style="align-items:center;"> {{ $lectures->links('vendor.pagination.bootstrap-4') }}</div>
                 <table class="table">

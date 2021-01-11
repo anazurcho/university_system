@@ -3,6 +3,7 @@
 namespace App\Http\Requests\lecture_requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class LectureRequest extends FormRequest
 {
@@ -25,7 +26,7 @@ class LectureRequest extends FormRequest
     {
         return [
             //
-            'name' => 'required|unique:lectures|min:3',
+            'name' => ['required', 'min:3', Rule::unique('lectures')->ignore($this->lecture->id)],
             'course_id' => 'required',
             'user_id' => 'required',
         ];

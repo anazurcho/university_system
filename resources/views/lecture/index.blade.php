@@ -26,7 +26,11 @@
             @foreach($lectures as $lecture)
                 <tr>
                     <th scope="row">{{$lecture->id}}</th>
-                    <td>{{$lecture->course->name}}</td>
+                    @if($lecture->course)
+                        <td>{{$lecture->course->name}}</td>
+                    @else
+                        <td>Not indicated</td>
+                    @endif
                     <td>{{$lecture->name}}</td>
                     <td>{{$lecture->user->name}}</td>
                     <td>

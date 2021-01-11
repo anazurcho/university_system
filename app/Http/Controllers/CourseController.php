@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\course_requests\CourseRequest;
 use App\Http\Requests\course_requests\CourseEditRequest;
 use App\Models\Course;
+use App\Models\CourseTag;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class CourseController extends Controller
@@ -24,13 +26,15 @@ class CourseController extends Controller
 
     public function create()
     {
-        return view('course/create');
+        $course_tags = CourseTag::all();
+        return view('course/create', compact('course_tags'));
     }
 
     public function save(CourseRequest $request)
     {
         $course = new Course($request->all());
         $course->save();
+        $course->course_tags()->attach($request->course_tags);
         return redirect()->action([CourseController::class, 'index']);
     }
 
@@ -42,12 +46,15 @@ class CourseController extends Controller
 
     public function edit(Course $course)
     {
-        return view("course/edit", compact('course'));
+        $course_tags = CourseTag::all();
+        return view("course/edit", compact('course', 'course_tags'));
     }
 
     public function update(CourseEditRequest $request, Course $course)
     {
         $course->update($request->all());
+        $course->course_tags()->detach($course->course_tags->pluck('id'));
+        $course->course_tags()->attach($request->course_tags);
         return redirect()->action([CourseController::class, 'index']);
     }
 

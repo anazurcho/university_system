@@ -13,6 +13,14 @@
                     @error('name')
                     <p class="text-danger">{{$errors->first('name')}}</p>
                     @enderror
+                    <div class="form-group">
+                        <label for="course_tags">Tags</label>
+                        <select name="course_tags[]" id="" multiple>
+                            @foreach($course_tags as $course_tag)
+                                <option value="{{ $course_tag->id }}" @if(in_array($course_tag->id, $course->course_tags->pluck('id')->toArray())) selected @endif>{{ $course_tag->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
                     <input type="hidden" name="_token" id='csrf_toKen' value="{{ csrf_toKen() }}">
                     <div class="box-footer marg_1">
                         <button type="submit" class="btn btn-primary">Save</button>

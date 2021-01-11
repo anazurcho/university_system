@@ -23,4 +23,9 @@ class CourseTagController extends Controller
         $course_tag->save();
         return redirect()->action([CourseTagController::class, 'index']);
     }
+    public function course_tag(CourseTag $course_tag)
+    {
+        $courses = $course_tag->courses()->paginate(5);
+        return view("course_tag/course_tag", compact('course_tag', 'courses'));
+    }
 }

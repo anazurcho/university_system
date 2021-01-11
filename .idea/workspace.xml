@@ -2,8 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1fcc7688-32f2-455c-b720-5fc1e88d87de" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StudentShellController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StudentShellController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/student_shell/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/student_shell/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/course_tag/course_tag.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/efa1c218-215e-4e3e-8f0b-52e13aa8652e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/efa1c218-215e-4e3e-8f0b-52e13aa8652e.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CourseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CourseController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CourseTagController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CourseTagController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/lecture_requests/LectureRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/lecture_requests/LectureRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Course.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Course.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/course/course.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/course/course.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/course/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/course/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/course/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/course/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/course/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/course/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/course_tag/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/course_tag/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/course_tag/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/course_tag/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/lecture/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/lecture/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/lecture/lecture.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/lecture/lecture.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,6 +170,7 @@
       <recent name="$PROJECT_DIR$/app/Models" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Http/Requests/course_tag_requests" />
       <recent name="$PROJECT_DIR$/app/Http/Requests/studentshell_requests" />
       <recent name="$PROJECT_DIR$/app/Http/Requests/schedule_requests" />
       <recent name="$PROJECT_DIR$/app/Http/Requests/lecture_requests" />
@@ -178,7 +194,7 @@
       <workItem from="1609977549690" duration="5227000" />
       <workItem from="1610037588630" duration="857000" />
       <workItem from="1610199787602" duration="3902000" />
-      <workItem from="1610367475302" duration="1795000" />
+      <workItem from="1610367475302" duration="12260000" />
     </task>
     <servers />
   </component>
@@ -191,11 +207,11 @@
     </state>
     <state x="457" y="281" width="783" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1048@0.0.1920.1048" timestamp="1610200133446" />
     <state x="914" y="281" width="804" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.3840.1048@0.0.3840.1048" timestamp="1609982905052" />
-    <state x="347" y="283" width="528" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1610200470323">
+    <state x="347" y="283" width="528" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1610389056926">
       <screen x="0" y="0" width="1920" height="1048" />
     </state>
-    <state x="347" y="283" width="528" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1048@0.0.1920.1048" timestamp="1610200470323" />
-    <state x="693" y="283" width="528" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.3840.1048@0.0.3840.1048" timestamp="1609980346280" />
+    <state x="347" y="283" width="528" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1048@0.0.1920.1048" timestamp="1610389056926" />
+    <state x="693" y="283" width="528" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.3840.1048@0.0.3840.1048" timestamp="1610381903218" />
     <state x="622" y="239" key="run.anything.popup" timestamp="1610369031300">
       <screen x="0" y="0" width="1920" height="1048" />
     </state>
