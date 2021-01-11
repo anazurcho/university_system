@@ -26,4 +26,18 @@ class MailController extends Controller
         });
         return redirect()->route('open.lecture', $lecture);
     }
+    public function create_user(User $user)
+    {
+        $student = $user;
+        return view('mail/create_user', compact('student'));
+    }
+
+    public function send_user(MailRequest $request, User $user)
+    {
+        Mail::raw($request->text, function ($message){
+            $message -> to(request('mail'))
+                    ->subject(request('subject'));
+        });
+        return redirect()->route('open.user', $user);
+    }
 }

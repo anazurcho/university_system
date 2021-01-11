@@ -93,6 +93,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/mail/create/{lecture}', [MailController::class, 'create'])->name('mail.create');
     Route::post('/mail/send/{lecture}', [MailController::class, 'send'])->name('mail.send');
+    Route::get('/mail/create_user/{user}', [MailController::class, 'create_user'])->name('mail.create_user');
+    Route::post('/mail/send_user/{user}', [MailController::class, 'send_user'])->name('mail.send_user');
 
 
 });

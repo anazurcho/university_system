@@ -2,13 +2,13 @@
 @section("content")
     <div class="container">
         <h1>send mail to</h1>
-        <h3>lecture students #{{$lecture->name}}</h3>
-        <form method="post" enctype="multipart/form-data" action="{{route('mail.send', $lecture->id)}}">
+        <h3> student #{{$student->name}}</h3>
+        <form method="post" enctype="multipart/form-data" action="{{route('mail.send_user', $student->id)}}">
             <div class="box-body">
                 <div class="form-group">
                     <label for="name">mail</label>
                     <input type="text" class="form-control @error('mail') is-invalid @enderror"
-                           placeholder="mail" name="mail" value="{{$students}}"/>
+                           placeholder="mail" name="mail" value="{{$student->email}}"/>
                     @error('mail')
                     <p class="text-danger">{{$errors->first('mail')}}</p>
                     @enderror
