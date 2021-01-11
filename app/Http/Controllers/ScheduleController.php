@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\schedule_requests\ScheduleRequest;
 use App\Models\Lecture;
 use App\Models\Schedule;
-use Illuminate\Http\Request;
 
 class ScheduleController extends Controller
 {
@@ -18,7 +18,7 @@ class ScheduleController extends Controller
         $lectures =  Lecture::all();
         return view('schedule/create', compact('lectures'));
     }
-    public function save(Request  $request)
+    public function save(ScheduleRequest  $request)
     {
         $schedule = new Schedule($request->all());
         $schedule->save();
