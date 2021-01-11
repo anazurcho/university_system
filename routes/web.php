@@ -91,9 +91,8 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/course_tags/save', [CourseTagController::class, 'save'])->name('save.course_tag');
     Route::get('/course_tags/{course_tag}', [CourseTagController::class, 'course_tag'])->name('course_tag');
 
-
     Route::get('/mail/create/{lecture}', [MailController::class, 'create'])->name('mail.create');
-    Route::post('/mail/send', [MailController::class, 'send'])->name('mail.send');
+    Route::post('/mail/send/{lecture}', [MailController::class, 'send'])->name('mail.send');
 
 
 });

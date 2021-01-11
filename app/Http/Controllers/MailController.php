@@ -18,12 +18,12 @@ class MailController extends Controller
         return view('mail/create', compact('students', 'lecture'));
     }
 
-    public function send(MailRequest $request)
+    public function send(MailRequest $request, Lecture $lecture)
     {
         Mail::raw($request->text, function ($message){
             $message -> to(explode(',', str_replace(' ', '', request('mail'))))
-            ->subject("Lecture #" . request('lecture')  . "  #" . request('subject') . " :)");
+                    ->subject(request('subject'));
         });
-        return redirect()->back();
+        return redirect()->route('open.lecture', $lecture);
     }
 }

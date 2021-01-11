@@ -1,8 +1,11 @@
 @extends("layout.layout")
 @section("content")
     <div class="container marg-3" align="center">
-        @can('student')
             <h3 class="text-danger">Lecture - {{$lecture->name}}</h3>
+        @foreach($lecture->course->course_tags -> pluck('name') as $course_tags)
+            #{{ $course_tags }}
+        @endforeach
+        @can('student')
             <table class="table">
                 <tr class="table-success">
                     <th scope="col">id</th>
