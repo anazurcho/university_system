@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\studentshell_requests\StudentShellRequest;
 use App\Models\Lecture;
 use App\Models\StudentShell;
 use App\Models\User;
@@ -27,7 +28,7 @@ class StudentShellController extends Controller
         $lectures =  Lecture::all();
         return view('student_shell/create', compact('students', 'lectures'));
     }
-    public function save(Request  $request)
+    public function save(StudentShellRequest  $request)
     {
         $student_shell = new StudentShell($request->all());
         $student_shell->save();
