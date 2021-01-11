@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1fcc7688-32f2-455c-b720-5fc1e88d87de" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7652789a-7332-42e8-9442-3a54c4b5d08d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7652789a-7332-42e8-9442-3a54c4b5d08d.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7652789a-7332-42e8-9442-3a54c4b5d08d.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7652789a-7332-42e8-9442-3a54c4b5d08d/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CourseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CourseController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/course/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/course/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/course/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/course/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LectureController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LectureController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/lecture/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/lecture/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/lecture/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/lecture/edit.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,6 +153,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Http/Requests/lecture_requests" />
       <recent name="$PROJECT_DIR$/app/Http/Requests/course_requests" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -180,7 +180,8 @@
       <updated>1609977548626</updated>
       <workItem from="1609977549690" duration="5227000" />
       <workItem from="1610037588630" duration="857000" />
-      <workItem from="1610199787602" duration="1002000" />
+      <workItem from="1610199787602" duration="3902000" />
+      <workItem from="1610367475302" duration="485000" />
     </task>
     <servers />
   </component>

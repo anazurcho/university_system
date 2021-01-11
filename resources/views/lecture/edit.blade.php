@@ -12,7 +12,7 @@
                            value="{{old('name', $lecture->name)}}" name="name"/>
                     <div class="marg-4">
                         <label for="course_id">Course Name</label>
-                        <select name="course_id">
+                        <select name="course_id" class="@error('course_id') is-invalid @enderror">
                             @foreach($courses as $course)
                                 @if (old('course_id', $lecture->course_id) ==$course->id))
                                 <option value="{{ $course->id }}" selected>{{ $course->name }}</option>
@@ -21,10 +21,13 @@
                                 @endif
                             @endforeach
                         </select>
+                        @error('course_id')
+                        <p class="text-danger">{{$errors->first('course_id')}}</p>
+                        @enderror
                     </div>
                     <div class="marg-4">
                         <label for="user_id">lecturer Name</label>
-                        <select name="user_id">
+                        <select name="user_id" class="@error('user_id') is-invalid @enderror">
                             @foreach($lecturers as $lecturer)
                                 @if (old('user_id', $lecture->user_id) ==$lecturer->id))
                                 <option value="{{ $lecturer->id }}" selected>{{ $lecturer->name }}</option>
@@ -33,8 +36,10 @@
                                 @endif
                             @endforeach
                         </select>
+                        @error('user_id')
+                        <p class="text-danger">{{$errors->first('user_id')}}</p>
+                        @enderror
                     </div>
-
                 </div>
             </div>
             <input type="hidden" name="_token" id='csrf_toKen' value="{{ csrf_toKen() }}">

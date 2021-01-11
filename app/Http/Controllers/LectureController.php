@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\lecture_requests\LectureRequest;
 use App\Models\Course;
 use App\Models\Lecture;
 use App\Models\StudentShell;
@@ -22,7 +23,7 @@ class LectureController extends Controller
         $courses =  Course::all();
         return view('lecture/create', compact('lecturers', 'courses'));
     }
-    public function save(Request  $request)
+    public function save(LectureRequest  $request)
     {
         $lecture = new Lecture($request->all());
         $lecture->save();
@@ -41,7 +42,7 @@ class LectureController extends Controller
         $student_shells = $lecture->student_shell()->paginate(5);
         return view("lecture/lecture", compact('lecture', 'student_shells', 'my_score'));
     }
-    public function update(Request $request, Lecture $lecture)
+    public function update(LectureRequest $request, Lecture $lecture)
     {
         $lecture->update($request->all());
         return redirect()->action([LectureController::class, 'index']);

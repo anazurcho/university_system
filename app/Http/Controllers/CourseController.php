@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\course_requests\CourseRequest;
 use App\Http\Requests\course_requests\CourseEditRequest;
 use App\Models\Course;
-use App\Models\Lecture;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class CourseController extends Controller
