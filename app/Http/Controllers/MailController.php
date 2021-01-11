@@ -6,7 +6,6 @@ use App\Http\Requests\MailRequest;
 use App\Models\Lecture;
 use App\Models\StudentShell;
 use App\Models\User;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
 class MailController extends Controller
@@ -21,7 +20,6 @@ class MailController extends Controller
 
     public function send(MailRequest $request)
     {
-
         Mail::raw($request->text, function ($message){
             $message -> to(explode(',', str_replace(' ', '', request('mail'))))
             ->subject("Lecture #" . request('lecture')  . "  #" . request('subject') . " :)");
