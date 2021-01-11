@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1fcc7688-32f2-455c-b720-5fc1e88d87de" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ScheduleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ScheduleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/schedule/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/schedule/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StudentShellController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StudentShellController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/student_shell/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/student_shell/create.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,6 +155,7 @@
       <recent name="$PROJECT_DIR$/app/Models" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Http/Requests/studentshell_requests" />
       <recent name="$PROJECT_DIR$/app/Http/Requests/schedule_requests" />
       <recent name="$PROJECT_DIR$/app/Http/Requests/lecture_requests" />
       <recent name="$PROJECT_DIR$/app/Http/Requests/course_requests" />
@@ -178,7 +178,7 @@
       <workItem from="1609977549690" duration="5227000" />
       <workItem from="1610037588630" duration="857000" />
       <workItem from="1610199787602" duration="3902000" />
-      <workItem from="1610367475302" duration="1195000" />
+      <workItem from="1610367475302" duration="1795000" />
     </task>
     <servers />
   </component>
@@ -196,5 +196,9 @@
     </state>
     <state x="347" y="283" width="528" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1048@0.0.1920.1048" timestamp="1610200470323" />
     <state x="693" y="283" width="528" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.3840.1048@0.0.3840.1048" timestamp="1609980346280" />
+    <state x="622" y="239" key="run.anything.popup" timestamp="1610369031300">
+      <screen x="0" y="0" width="1920" height="1048" />
+    </state>
+    <state x="622" y="239" key="run.anything.popup/0.0.1920.1048@0.0.1920.1048" timestamp="1610369031300" />
   </component>
 </project>
