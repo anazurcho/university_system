@@ -2,27 +2,27 @@
 @section("content")
     <div class="container marg-3" align="center">
         @can('student')
-        <h3 class="text-danger">Lecture - {{$lecture->name}}</h3>
-        <table class="table">
-            <tr class="table-success">
-                <th scope="col">id</th>
-                <th scope="col">course</th>
-                <th scope="col">lecture</th>
-                <th scope="col">day</th>
-                <th scope="col">time</th>
-            </tr>
-            <tbody>
-            @foreach($lecture->schedules as $schedule)
-                <tr>
-                    <th scope="row">{{$schedule->id}}</th>
-                    <td>{{$lecture->course->name}}</td>
-                    <td>{{$lecture->name}}</td>
-                    <td>{{$schedule->day}}</td>
-                    <td>{{$schedule->time}}</td>
+            <h3 class="text-danger">Lecture - {{$lecture->name}}</h3>
+            <table class="table">
+                <tr class="table-success">
+                    <th scope="col">id</th>
+                    <th scope="col">course</th>
+                    <th scope="col">lecture</th>
+                    <th scope="col">day</th>
+                    <th scope="col">time</th>
                 </tr>
-            @endforeach
-            </tbody>
-        </table>
+                <tbody>
+                @foreach($lecture->schedules as $schedule)
+                    <tr>
+                        <th scope="row">{{$schedule->id}}</th>
+                        <td>{{$lecture->course->name}}</td>
+                        <td>{{$lecture->name}}</td>
+                        <td>{{$schedule->day}}</td>
+                        <td>{{$schedule->time}}</td>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
         @endcan
         @can('admin')
             <div class="card mb-3 marg-4 " style="max-width: 18rem;">
@@ -71,49 +71,59 @@
             @endif
         @endcan
         @can('lecturer')
-            <div style="align-items:center;"> {{ $student_shells->links('vendor.pagination.bootstrap-4') }} </div>
-            <h3 class="text-danger">Students</h3>
-            <table class="table">
-                <thead class="thead-dark">
-                <tr>
-                    <th scope="col">user</th>
-                    <th scope="col">course</th>
-                    <th scope="col">lecture</th>
-                    <th scope="col">lecturer</th>
-                    <th scope="col">score</th>
-                    <th scope="col">Change Score</th>
-                    <th scope="col">see</th>
-                </tr>
-                </thead>
-                <tbody>
-                @foreach($student_shells as $student_shell)
+            @if($student_shells)
+                <div style="align-items:center;"> {{ $student_shells->links('vendor.pagination.bootstrap-4') }} </div>
+                <h3 class="text-danger">Students</h3>
+                <div style="margin-bottom:20px; align-items:center;">
+                    <button type="button" class="btn btn-info">
+                        <a class=" text-white" href="{{route('mail.create', $lecture)}}">
+                            send mail to students
+                        </a>
+                    </button>
+                </div>
+                <table class="table">
+                    <thead class="thead-dark">
                     <tr>
-                        <td>{{$student_shell->user->name}}</td>
-                        <td>{{$student_shell->lecture->course->name}}</td>
-                        <td>{{$student_shell->lecture->name}}</td>
-                        <td>{{$student_shell->lecture->user->name}}</td>
-                        <td>{{$student_shell->total_score}}</td>
-                        <td>
-                            <form class="form-inline" method="post" enctype="multipart/form-data"
-                                  action="{{route('change_score.student_shell', $student_shell->id)}}">
-                                @csrf
-                                @method("PUT")
-                                <input class="form-control mr-sm-1  col-md-3" type="text" placeholder="score"
-                                       name="total_score">
-                                <button class="btn btn-secondary mr-sm-1 col-md-4" type="submit">+ Score</button>
-                            </form>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-info">
-                                <a class=" text-white" href="{{route('open.user', $student_shell->user->id)}}">
-                                    see
-                                </a>
-                            </button>
-                        </td>
+                        <th scope="col">user</th>
+                        <th scope="col">course</th>
+                        <th scope="col">lecture</th>
+                        <th scope="col">lecturer</th>
+                        <th scope="col">score</th>
+                        <th scope="col">Change Score</th>
+                        <th scope="col">see</th>
                     </tr>
-                @endforeach
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                    @foreach($student_shells as $student_shell)
+                        <tr>
+                            <td>{{$student_shell->user->name}}</td>
+                            <td>{{$student_shell->lecture->course->name}}</td>
+                            <td>{{$student_shell->lecture->name}}</td>
+                            <td>{{$student_shell->lecture->user->name}}</td>
+                            <td>{{$student_shell->total_score}}</td>
+                            <td>
+                                <form class="form-inline" method="post" enctype="multipart/form-data"
+                                      action="{{route('change_score.student_shell', $student_shell->id)}}">
+                                    @csrf
+                                    @method("PUT")
+                                    <input class="form-control mr-sm-1  col-md-3" type="text" placeholder="score"
+                                           name="total_score">
+                                    <button class="btn btn-secondary mr-sm-1 col-md-4" type="submit">+ Score</button>
+                                </form>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-info">
+                                    <a class=" text-white" href="{{route('open.user', $student_shell->user->id)}}">
+                                        see
+                                    </a>
+                                </button>
+                            </td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>  @else
+                <td>without students</td>
+            @endif
         @endcan
     </div>
 @endsection
