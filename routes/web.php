@@ -43,7 +43,8 @@ Route::middleware(['edit.password'])->group(function () {
     Route::get('/users/{user}/password_edit', [UserController::class, 'password_edit'])->name('password_edit');
     Route::put('/users/{user}/password_update', [UserController::class, 'password_update'])->name('password_update');
     Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
-
+    Route::get('/users/create_user', [UserController::class, 'user_create'])->name('create.user');
+    Route::post('/users/save_user', [UserController::class, 'user_save'])->name('save.user');
 });
 
 Route::middleware(['auth'])->group(function () {
@@ -51,9 +52,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/users', [UserController::class, 'index'])->name('all_users');
     Route::get('/users/my_profile', [UserController::class, 'my_profile'])->name('my_profile');
     Route::get('/users/{user}', [UserController::class, 'open'])->name('open.user');
-    Route::get('/users/create_user', [UserController::class, 'user_create'])->name('create.user');
-    Route::post('/users/save_user', [UserController::class, 'user_save'])->name('save.user');
-
 
     Route::get('/lectures', [LectureController::class, 'index'])->name('all_lectures');
     Route::get('/lectures/create', [LectureController::class, 'create'])->name('create.lecture');
