@@ -45,6 +45,7 @@ Route::middleware(['edit.password'])->group(function () {
     Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
     Route::get('/users/create_user', [UserController::class, 'user_create'])->name('create.user');
     Route::post('/users/save_user', [UserController::class, 'user_save'])->name('save.user');
+    Route::delete('/users/{user}/delete', [UserController::class, 'delete'])->name('users.delete');
 });
 
 Route::middleware(['auth'])->group(function () {

@@ -14,6 +14,13 @@
                         </a>
                     </button>
                 @endcan
+                @can('admin')
+                    <form method="post" action="{{route('users.delete', $user->id)}}" class="marg-4">
+                        @csrf
+                        @method("DELETE")
+                        <button type="submit" class="btn btn-info">delete user</button>
+                    </form>
+                @endcan
             </div>
         </div>
     </div>

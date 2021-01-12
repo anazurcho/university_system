@@ -71,6 +71,11 @@ class UserController extends Controller
     {
         return view("user/edit", compact('user'));
     }
+    public function delete(User $user)
+    {
+        $user->delete();
+        return redirect()->route('all_users');
+    }
     public function update(UpdateUserRequest $request, User $user)
     {
 //        $user->update($request->all());
