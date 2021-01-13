@@ -88,33 +88,4 @@
             </table>
         </div>
     </div>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-        });
-        $(document).on('click', '.btn-approve', function (e) {
-            e.preventDefault();
-            $this = $(this);
-            $.ajax({
-                type: 'PUT',
-                url: $this.attr('url'),
-                success: function (msg) {
-                    if ($this.hasClass('fa-check-square-o')) {
-                        console.log("not approved");
-                        $this.removeClass("fa-check-square-o");
-                        $this.addClass("fa-times");
-                    } else {
-                        console.log("hire");
-                        $this.removeClass("fa-times");
-                        $this.addClass("fa-check-square-o");
-                    }
-                    console.log(msg);
-                }
-            });
-        });
-    </script>
 @endsection
