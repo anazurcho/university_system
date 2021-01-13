@@ -80,15 +80,6 @@
                         <td>{{$post->title}}</td>
                         @can("admin")
                             <td>
-                                @if($post->approved)
-                                    <a type="submit" class="fa fa-check-square-o btn-approve"
-                                       url="{{route('approved', $post->id)}}">approved</a>
-                                @else
-                                    <a type="submit" class="fa fa-times btn-approve"
-                                       url="{{route('approved', $post->id)}}">approved</a>
-                                @endif
-                            </td>
-                            <td>
                                 <button data-id="{{$post->id}}" class="btn @if($post->approved)btn-primary  @else btn-secondary @endif approved">
                                     @if($post->approved) Approved @else Not Approved @endif
                                 </button>
