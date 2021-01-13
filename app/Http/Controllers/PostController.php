@@ -22,7 +22,7 @@ class PostController extends Controller
 
     function my_posts()
     {
-        $posts = Post::where('user_id', Auth::user()->id)->paginate(10);
+        $posts = Auth::user()->posts()->paginate(10);
         $title = 'My Posts';
         return view('post/index', compact('posts', 'title'));
     }

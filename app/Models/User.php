@@ -47,4 +47,10 @@ class User extends Authenticatable
     public function lecturer(){
         return $this->hasMany(Lecture::class);
     }
+    public function posts(){
+        return $this->hasMany(Post::class);
+    }
+    public function post_comments(){
+        return $this->hasMany(PostComment::class);
+    }
 }

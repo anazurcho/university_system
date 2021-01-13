@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CourseTagController;
 use App\Http\Controllers\MailController;
+use App\Http\Controllers\PostCommentController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PostTagController;
 use App\Http\Controllers\ScheduleController;
@@ -105,6 +106,8 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/post_tags/save', [PostTagController::class, 'save'])->name('post_tags.save');
     Route::delete('/post_tags/{post_tag}/delete', [PostTagController::class, 'delete'])->name('post_tags.delete');
     Route::get('/post_tags/{post_tag}', [PostTagController::class, 'post_tag'])->name('post_tag');
+
+    Route::post('/post_comments/{post}', [PostCommentController::class, 'save'])->name('post_comments.save');
 
 });
 
