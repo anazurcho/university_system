@@ -1,5 +1,35 @@
 @extends("layout.layout")
 @section("content")
+    <script>
+        window.onload = () => {
+            document.querySelectorAll('.approved').forEach(item => {
+                item.addEventListener('click', async ({target}) => {
+                    try {
+                        const response = await fetch(`/posts/${target.dataset.id}/approved/`, {
+                            method: 'PUT',
+                            headers: {
+                                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
+                            },
+                        });
+                        let object = document.querySelector(`[data-id="${target.dataset.id}"]`)
+                        // console.log(response)
+                        if(object.classList.contains('btn-primary')){
+                            object.classList.remove('btn-primary')
+                            object.classList.add('btn-secondary')
+                            object.textContent = "Not Approved"
+                        }else{
+                            object.classList.remove('btn-secondary')
+                            object.classList.add('btn-primary')
+                            object.textContent = "Approved"
+                        }
+                    }
+                    catch(err) {
+                        console.error(err)
+                    }
+                })
+            })
+        };
+    </script>
     <div class="container marg-3 " align="center">
         <div>
             <div class="nav navbar-collapse ">
@@ -57,6 +87,11 @@
                                     <a type="submit" class="fa fa-times btn-approve"
                                        url="{{route('approved', $post->id)}}">approved</a>
                                 @endif
+                            </td>
+                            <td>
+                                <button data-id="{{$post->id}}" class="btn @if($post->approved)btn-primary  @else btn-secondary @endif approved">
+                                    @if($post->approved) Approved @else Not Approved @endif
+                                </button>
                             </td>
                             <td>
                                 <form method="post" action="{{route('posts.delete', $post->id)}}">
