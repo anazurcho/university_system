@@ -9,13 +9,12 @@ use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
-    //
     public function index()
     {
-        if (Auth::user()->admin) {
-            $posts = Post::paginate(5);
+        if (Auth::user()->status == 'admin') {
+            $posts = Post::paginate(10);
         } else {
-            $posts = Post::where('approved', 1)->paginate(5);
+            $posts = Post::where('approved', 1)->paginate(10);
         }
         $title = 'All Posts';
         return view('post/index', compact('posts', 'title'));
@@ -23,15 +22,15 @@ class PostController extends Controller
 
     function my_posts()
     {
-        $posts = Post::where('user_id', Auth::user()->id)->paginate(5);
+        $posts = Post::where('user_id', Auth::user()->id)->paginate(10);
         $title = 'My Posts';
         return view('post/index', compact('posts', 'title'));
     }
 
     public function create()
     {
-        $tags = PostTag::all();
-        return view('post/create', compact('tags'));
+        $post_tags = PostTag::all();
+        return view('post/create', compact('post_tags'));
     }
 
     public function save(Request $request)
@@ -39,7 +38,7 @@ class PostController extends Controller
         $post = new Post($request->all());
         $post->user_id = Auth::id();
         $post->save();
-        $post->post_tags()->attach($request->tags);
+        $post->post_tags()->attach($request->post_tags);
         return redirect()->action([PostController::class, 'index']);
     }
 
@@ -58,5 +57,10 @@ class PostController extends Controller
 //            });
 //        }
         response("ok", 200);
+    }
+    public function delete(Post $post)
+    {
+        $post->delete();
+        return redirect()->action([PostController::class, 'index']);
     }
 }

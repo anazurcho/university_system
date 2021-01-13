@@ -100,12 +100,10 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('/posts/{post}/delete', [PostController::class, 'delete'])->name('posts.delete');
     Route::put('/posts/{post}/approved', [PostController::class, 'approved'])->name('approved');
 
-    Route::get('/tags', [PostTagController::class, 'index'])->name('tags.all');
-    Route::get('/tags/create', [PostTagController::class, 'create'])->name('tags.create');
-    Route::post('/tags/save', [PostTagController::class, 'save'])->name('tags.save');
-    Route::delete('/tags/{tag}', [PostTagController::class, 'delete'])->name('tags.delete');
-
-
+    Route::get('/post_tags', [PostTagController::class, 'index'])->name('post_tags.all');
+    Route::post('/post_tags/save', [PostTagController::class, 'save'])->name('post_tags.save');
+    Route::delete('/post_tags/{post_tag}/delete', [PostTagController::class, 'delete'])->name('post_tags.delete');
+    Route::get('/post_tags/{post_tag}', [PostTagController::class, 'post_tag'])->name('post_tag');
 
 });
 

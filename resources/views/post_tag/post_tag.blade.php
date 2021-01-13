@@ -16,7 +16,7 @@
                 @foreach($posts as $post)
                     <tr>
                         <th scope="row">{{$post->id}}</th>
-                        <td>{{$post->name}}</td>
+                        <td>{{$post->title}}</td>
                         <td>
                             <button type="button" class="btn btn-info">
                                 <a class="text-white" href="{{route('post', $post->id)}}">

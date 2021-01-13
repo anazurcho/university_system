@@ -10,7 +10,6 @@
                         </a>
                     </button>
                 </div>
-
                 <div style="margin-bottom:20px; align-items:center;" class="mr-sm-2">
                     <button type="button" class="btn btn-info">
                         <a class=" text-white" href="{{route('all_course_tags')}}">

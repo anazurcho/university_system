@@ -39,12 +39,6 @@
 <div class="d-flex">
     @if (Auth::user())
         <ul class="nav flex-column right-nav bg-dark full-height text-white">
-            <li class="nav-item marg_2">
-                <form class="form-inline my-1 my-lg-0">
-                    <input class="form-control mr-sm-0" type="text" placeholder="Search">
-                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                </form>
-            </li>
             <li class="nav-item">
                 <a class="nav-link text-white" href="{{route('my_profile')}}">My Profile</a>
                 <hr/>
