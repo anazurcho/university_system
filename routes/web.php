@@ -36,9 +36,7 @@ Route::post('/post-register', [UserController::class, 'postRegister'])->name('po
 Route::post('/logout', [UserController::class, 'logout'])->name('logout');
 Route::get('/about',function () { return view('about'); })->name('about');
 
-
 Route::middleware(['edit.password'])->group(function () {
-
     Route::put('/users/{user}/update', [UserController::class, 'update'])->name('users.update');
     Route::get('/users/{user}/password_edit', [UserController::class, 'password_edit'])->name('password_edit');
     Route::put('/users/{user}/password_update', [UserController::class, 'password_update'])->name('password_update');
@@ -62,7 +60,6 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/lectures/{lecture}/update', [LectureController::class, 'update'])->name('update.lecture');
     Route::delete('/lectures/{lecture}/delete', [LectureController::class, 'delete'])->name('delete.lecture');
 
-
     Route::get('/courses', [CourseController::class, 'index'])->name('all_courses');
     Route::get('/my_courses', [CourseController::class, 'my_courses'])->name('my_courses');
     Route::get('/courses/{course}', [CourseController::class, 'course'])->name('course');
@@ -72,14 +69,12 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/courses/{course}/update', [CourseController::class, 'update'])->name('update.course');
     Route::delete('/courses/{course}/delete', [CourseController::class, 'delete'])->name('delete.course');
 
-
     Route::get('/student_shells', [StudentShellController::class, 'index'])->name('all_student_shells');
     Route::get('/my_student_shells', [StudentShellController::class, 'my_student_shells'])->name('my_student_shells');
     Route::get('/student_shells/create', [StudentShellController::class, 'create'])->name('create.student_shell');
     Route::post('/student_shells/save', [StudentShellController::class, 'save'])->name('save.student_shell');
     Route::post('/student_shells/choose', [StudentShellController::class, 'choose'])->name('choose.student_shell');
     Route::put('/student_shells/{student_shell}/change_score', [StudentShellController::class, 'change_score'])->name('change_score.student_shell');
-
 
     Route::get('/schedules', [ScheduleController::class, 'index'])->name('all_schedules');
     Route::get('/schedules/create', [ScheduleController::class, 'create'])->name('create.schedule');
@@ -94,8 +89,6 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/mail/send/{lecture}', [MailController::class, 'send'])->name('mail.send');
     Route::get('/mail/create_user/{user}', [MailController::class, 'create_user'])->name('mail.create_user');
     Route::post('/mail/send_user/{user}', [MailController::class, 'send_user'])->name('mail.send_user');
-
-
 });
 
 
