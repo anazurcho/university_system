@@ -47,6 +47,8 @@ Route::middleware(['edit.password'])->group(function () {
     Route::get('/users/create_user', [UserController::class, 'user_create'])->name('create.user');
     Route::post('/users/save_user', [UserController::class, 'user_save'])->name('save.user');
     Route::delete('/users/{user}/delete', [UserController::class, 'delete'])->name('users.delete');
+    Route::get('/users/{user}/upload_image', [UserController::class, 'upload_image'])->name('users.upload_image');
+    Route::put('/users/{user}/save_image', [UserController::class, 'save_image'])->name('users.save_image');
 });
 
 Route::middleware(['auth'])->group(function () {

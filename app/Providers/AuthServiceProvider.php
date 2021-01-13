@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\User;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 
 class AuthServiceProvider extends ServiceProvider
@@ -51,5 +52,16 @@ class AuthServiceProvider extends ServiceProvider
                 return true;
             }
         });
+        Gate::define('own', function (User $user) {
+            if (!empty($user)) {
+                if ($user === Auth::user() || Auth::user()->status == 'admin')  {
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+        });
+
+
     }
 }

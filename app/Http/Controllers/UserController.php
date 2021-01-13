@@ -8,8 +8,9 @@ use App\Http\Requests\user_requests\PasswordRequest;
 use App\Http\Requests\user_requests\UpdateUserRequest;
 use App\Models\StudentShell;
 use App\Models\User;
-use http\Client\Request;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class UserController extends Controller
 {
@@ -110,5 +111,17 @@ class UserController extends Controller
         $user->password = bcrypt($request->input('password'));
         $user->save();
         return redirect()->route('all_users');
+    }
+    public function upload_image(User $user)
+    {
+        return view("user/upload_image", compact('user'));
+    }
+    public function save_image(Request $request, User $user)
+    {
+        $imgName = Str::random(16).'.jpg';
+        $request->file('image')->move(public_path('images'), $imgName);
+        $user->image = $imgName;
+        $user->save();
+        return redirect()->route('open.user', $user->id);
     }
 }
