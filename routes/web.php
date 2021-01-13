@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\CourseTagController;
 use App\Http\Controllers\MailController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\PostTagController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LectureController;
@@ -89,6 +91,22 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/mail/send/{lecture}', [MailController::class, 'send'])->name('mail.send');
     Route::get('/mail/create_user/{user}', [MailController::class, 'create_user'])->name('mail.create_user');
     Route::post('/mail/send_user/{user}', [MailController::class, 'send_user'])->name('mail.send_user');
+
+    Route::get('/posts', [PostController::class, 'index'])->name('posts.all');
+    Route::get('/my_posts', [PostController::class, 'my_posts'])->name('my_posts');
+    Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
+    Route::post('/posts/save', [PostController::class, 'save'])->name('posts.save');
+    Route::get('/posts/{post}', [PostController::class, 'show'])->name('post');
+    Route::delete('/posts/{post}/delete', [PostController::class, 'delete'])->name('posts.delete');
+    Route::put('/posts/{post}/approved', [PostController::class, 'approved'])->name('approved');
+
+    Route::get('/tags', [PostTagController::class, 'index'])->name('tags.all');
+    Route::get('/tags/create', [PostTagController::class, 'create'])->name('tags.create');
+    Route::post('/tags/save', [PostTagController::class, 'save'])->name('tags.save');
+    Route::delete('/tags/{tag}', [PostTagController::class, 'delete'])->name('tags.delete');
+
+
+
 });
 
 

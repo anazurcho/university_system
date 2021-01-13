@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -86,6 +87,10 @@
                     <hr/>
                 </li>
             @endcan
+            <li class="nav-item">
+                <a class="nav-link text-white" href="{{route('posts.all')}}">Posts</a>
+                <hr/>
+            </li>
             <li class="nav-item">
                 <a class="nav-link text-white" href="{{route('about')}}">About</a>
                 <hr/>
