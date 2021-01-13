@@ -31,8 +31,12 @@
                     @else
                         <td>Not indicated</td>
                     @endif
-                    <td>{{$lecture->name}}</td>
-                    <td>{{$lecture->user->name}}</td>
+                        <td>{{$lecture->name}}</td>
+                    @if($lecture->user)
+                        <td>{{$lecture->user->name}}</td>
+                    @else
+                        <td>Not indicated</td>
+                    @endif
                     <td>
                         <button type="button" class="btn btn-info">
                             <a class="text-white" href="{{route('edit.lecture', $lecture->id)}}">

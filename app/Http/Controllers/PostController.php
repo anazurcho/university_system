@@ -63,4 +63,14 @@ class PostController extends Controller
         $post->delete();
         return redirect()->action([PostController::class, 'index']);
     }
+    public function post(Post $post)
+    {
+//        $post = Post::query()->findOrFail($id);
+        return view("post/post", compact('post'));
+    }
+    public function like(Post $post)
+    {
+        $post->increment('likes',1);
+        return redirect()->back();
+    }
 }

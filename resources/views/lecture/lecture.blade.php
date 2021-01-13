@@ -1,7 +1,7 @@
 @extends("layout.layout")
 @section("content")
     <div class="container marg-3" align="center">
-            <h3 class="text-danger">Lecture - {{$lecture->name}}</h3>
+        <h3 class="text-danger">Lecture - {{$lecture->name}}</h3>
         @foreach($lecture->course->course_tags -> pluck('name') as $course_tags)
             #{{ $course_tags }}
         @endforeach
@@ -99,7 +99,11 @@
                     <tbody>
                     @foreach($student_shells as $student_shell)
                         <tr>
-                            <td>{{$student_shell->user->name}}</td>
+                            @if($student_shell->user)
+                                <td>{{$student_shell->user->name}}</td>
+                            @else
+                                <td>Not indicated</td>
+                            @endif
                             <td>{{$student_shell->lecture->course->name}}</td>
                             <td>{{$student_shell->lecture->name}}</td>
                             <td>{{$student_shell->lecture->user->name}}</td>
@@ -114,13 +118,16 @@
                                     <button class="btn btn-secondary mr-sm-1 col-md-4" type="submit">+ Score</button>
                                 </form>
                             </td>
-                            <td>
-                                <button type="button" class="btn btn-info">
-                                    <a class=" text-white" href="{{route('open.user', $student_shell->user->id)}}">
-                                        see
-                                    </a>
-                                </button>
-                            </td>
+                            @if($student_shell->user)
+                                <td>
+                                    <button type="button" class="btn btn-info">
+                                        <a class=" text-white" href="{{route('open.user', $student_shell->user->id)}}">
+                                            see
+                                        </a>
+                                    </button>
+                                </td> @else
+                                <td>Not indicated</td>
+                            @endif
                         </tr>
                     @endforeach
                     </tbody>

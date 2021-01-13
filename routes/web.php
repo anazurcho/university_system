@@ -96,9 +96,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/my_posts', [PostController::class, 'my_posts'])->name('my_posts');
     Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
     Route::post('/posts/save', [PostController::class, 'save'])->name('posts.save');
-    Route::get('/posts/{post}', [PostController::class, 'show'])->name('post');
+    Route::get('/posts/{post}', [PostController::class, 'post'])->name('post');
     Route::delete('/posts/{post}/delete', [PostController::class, 'delete'])->name('posts.delete');
     Route::put('/posts/{post}/approved', [PostController::class, 'approved'])->name('approved');
+    Route::put('/posts/{post}/like', [PostController::class, 'like'])->name('like');
 
     Route::get('/post_tags', [PostTagController::class, 'index'])->name('post_tags.all');
     Route::post('/post_tags/save', [PostTagController::class, 'save'])->name('post_tags.save');
