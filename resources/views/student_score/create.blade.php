@@ -2,7 +2,7 @@
 @section("content")
     <body>
     <div class="container marg-3">
-        <form method="post" enctype="multipart/form-data" action="{{route('save.student_shell')}}">
+        <form method="post" enctype="multipart/form-data" action="{{route('save.student_score')}}">
             <div class="box-body">
                 <div class="form-group">
                     <div>

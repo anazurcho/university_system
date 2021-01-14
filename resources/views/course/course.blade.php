@@ -50,7 +50,7 @@
                 </table>
             </div>
             <div class="marg-3">
-                <form method="post" enctype="multipart/form-data" action="{{route('choose.student_shell')}}">
+                <form method="post" enctype="multipart/form-data" action="{{route('choose.student_score')}}">
                     <select name="lecture_id">
                         @foreach($course->lectures as $lecture)
                             <option value="{{ $lecture->id }}">{{ $lecture->name }}</option>

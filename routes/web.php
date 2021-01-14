@@ -7,10 +7,10 @@ use App\Http\Controllers\PostCommentController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PostTagController;
 use App\Http\Controllers\ScheduleController;
+use App\Http\Controllers\StudentScoreController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LectureController;
 use App\Http\Controllers\CourseController;
-use App\Http\Controllers\StudentShellController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -75,12 +75,12 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/courses/{course}/update', [CourseController::class, 'update'])->name('update.course');
     Route::delete('/courses/{course}/delete', [CourseController::class, 'delete'])->name('delete.course');
 
-    Route::get('/student_shells', [StudentShellController::class, 'index'])->name('all_student_shells');
-    Route::get('/my_student_shells', [StudentShellController::class, 'my_student_shells'])->name('my_student_shells');
-    Route::get('/student_shells/create', [StudentShellController::class, 'create'])->name('create.student_shell');
-    Route::post('/student_shells/save', [StudentShellController::class, 'save'])->name('save.student_shell');
-    Route::post('/student_shells/choose', [StudentShellController::class, 'choose'])->name('choose.student_shell');
-    Route::put('/student_shells/{student_shell}/change_score', [StudentShellController::class, 'change_score'])->name('change_score.student_shell');
+    Route::get('/student_scores', [StudentScoreController::class, 'index'])->name('all_student_scores');
+    Route::get('/my_student_scores', [StudentScoreController::class, 'my_student_scores'])->name('my_student_scores');
+    Route::get('/student_scores/create', [StudentScoreController::class, 'create'])->name('create.student_score');
+    Route::post('/student_scores/save', [StudentScoreController::class, 'save'])->name('save.student_score');
+    Route::post('/student_scores/choose', [StudentScoreController::class, 'choose'])->name('choose.student_score');
+    Route::put('/student_scores/{student_score}/change_score', [StudentScoreController::class, 'change_score'])->name('change_score.student_score');
 
     Route::get('/schedules', [ScheduleController::class, 'index'])->name('all_schedules');
     Route::get('/schedules/create', [ScheduleController::class, 'create'])->name('create.schedule');
@@ -151,10 +151,10 @@ Route::middleware(['auth'])->group(function () {
 
 //Route::get('/student_shells', [StudentShellController::class, 'index'])->name('all_student_shells')->middleware('auth');
 //Route::get('/my_student_shells', [StudentShellController::class, 'my_student_shells'])->name('my_student_shells')->middleware('auth');
-//Route::get('/student_shells/create', [StudentShellController::class, 'create'])->name('create.student_shell')->middleware('auth');
-//Route::post('/student_shells/save', [StudentShellController::class, 'save'])->name('save.student_shell')->middleware('auth');
-//Route::post('/student_shells/choose', [StudentShellController::class, 'choose'])->name('choose.student_shell')->middleware('auth');
-//Route::put('/student_shells/{student_shell}/change_score', [StudentShellController::class, 'change_score'])->name('change_score.student_shell')->middleware('auth');
+//Route::get('/student_shells/create', [StudentShellController::class, 'create'])->name('create.student_score')->middleware('auth');
+//Route::post('/student_shells/save', [StudentShellController::class, 'save'])->name('save.student_score')->middleware('auth');
+//Route::post('/student_shells/choose', [StudentShellController::class, 'choose'])->name('choose.student_score')->middleware('auth');
+//Route::put('/student_shells/{student_score}/change_score', [StudentShellController::class, 'change_score'])->name('change_score.student_score')->middleware('auth');
 
 //Route::get('/schedules', [ScheduleController::class, 'index'])->name('all_schedules')->middleware('auth');
 //Route::get('/schedules/create', [ScheduleController::class, 'create'])->name('create.schedule')->middleware('auth');

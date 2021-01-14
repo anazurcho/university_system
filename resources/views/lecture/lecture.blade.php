@@ -79,8 +79,8 @@
             @endif
         @endcan
         @can('lecturer')
-            @if($student_shells)
-                <div style="align-items:center;"> {{ $student_shells->links('vendor.pagination.bootstrap-4') }} </div>
+            @if($student_scores)
+                <div style="align-items:center;"> {{ $student_scores->links('vendor.pagination.bootstrap-4') }} </div>
                 <h3 class="text-danger">Students</h3>
                 <div style="margin-bottom:20px; align-items:center;">
                     <button type="button" class="btn btn-info">
@@ -107,20 +107,20 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($student_shells as $student_shell)
+                    @foreach($student_scores as $student_score)
                         <tr>
-                            @if($student_shell->user)
-                                <td>{{$student_shell->user->name}}</td>
+                            @if($student_score->user)
+                                <td>{{$student_score->user->name}}</td>
                             @else
                                 <td>Not indicated</td>
                             @endif
-                            <td>{{$student_shell->lecture->course->name}}</td>
-                            <td>{{$student_shell->lecture->name}}</td>
-                            <td>{{$student_shell->lecture->user->name}}</td>
-                            <td>{{$student_shell->total_score}}</td>
+                            <td>{{$student_score->lecture->course->name}}</td>
+                            <td>{{$student_score->lecture->name}}</td>
+                            <td>{{$student_score->lecture->user->name}}</td>
+                            <td>{{$student_score->total_score}}</td>
                             <td>
                                 <form class="form-inline" method="post" enctype="multipart/form-data"
-                                      action="{{route('change_score.student_shell', $student_shell->id)}}">
+                                      action="{{route('change_score.student_score', $student_score->id)}}">
                                     @csrf
                                     @method("PUT")
                                     <input class="form-control mr-sm-1  col-md-3" type="text" placeholder="score"
@@ -128,11 +128,11 @@
                                     <button class="btn btn-secondary mr-sm-1 col-md-4" type="submit">+ Score</button>
                                 </form>
                             </td>
-                            @if($student_shell->user)
+                            @if($student_score->user)
                                 <td>
                                     <button type="button" class="btn btn-info">
-                                        <a class=" text-white" href="{{route('open.user', $student_shell->user->id)}}">
-                                            see
+                                        <a class=" text-white" href="{{route('open.user', $student_score->user->id)}}">
+                                            See
                                         </a>
                                     </button>
                                 </td> @else

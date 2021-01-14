@@ -54,7 +54,7 @@
             @endcan
             @can("student")
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="{{route('my_student_shells')}}">My Student Shells</a>
+                    <a class="nav-link text-white" href="{{route('my_student_scores')}}">My Student Scores</a>
                     <hr/>
                 </li>
                 <li class="nav-item">
@@ -76,7 +76,7 @@
                     <hr/>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="{{route('all_student_shells')}}">Student Shells</a>
+                    <a class="nav-link text-white" href="{{route('all_student_scores')}}">Student Scores</a>
                     <hr/>
                 </li>
             @endcan

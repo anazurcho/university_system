@@ -44,7 +44,7 @@
                 @can('admin')
                     <h4 class="text-danger">for student</h4>
                 @endcan
-                <div style="align-items:center;"> {{ $student_shells->links('vendor.pagination.bootstrap-4') }} </div>
+                <div style="align-items:center;"> {{ $student_scores->links('vendor.pagination.bootstrap-4') }} </div>
                 <table class="table">
                     <tr class="table-success">
                         @can('admin')
@@ -56,7 +56,7 @@
                         <th scope="col">Open</th>
                     </tr>
                     <tbody>
-                    @foreach($student_shells as $course)
+                    @foreach($student_scores as $course)
                         <tr>
                             @can('admin')
                                 <th scope="row">{{$course->id}}</th>

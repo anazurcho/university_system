@@ -3,18 +3,18 @@
 namespace Database\Factories;
 
 use App\Models\Lecture;
-use App\Models\StudentShell;
+use App\Models\StudentScore;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class StudentShellFactory extends Factory
+class StudentScoreFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = StudentShell::class;
+    protected $model = StudentScore::class;
 
     /**
      * Define the model's default state.

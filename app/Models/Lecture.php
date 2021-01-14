@@ -20,9 +20,8 @@ class Lecture extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
-//    public function student_shells(){
-    public function student_shell(){
-        return $this->hasMany(StudentShell::class);
+    public function student_score(){
+        return $this->hasMany(StudentScore::class);
     }
     public function schedules(){
         return $this->hasMany(Schedule::class);

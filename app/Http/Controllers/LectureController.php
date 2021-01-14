@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\lecture_requests\LectureRequest;
 use App\Models\Course;
 use App\Models\Lecture;
-use App\Models\StudentShell;
+use App\Models\StudentScore;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -38,9 +38,9 @@ class LectureController extends Controller
     }
     public function open(Lecture $lecture)
     {
-        $my_score = StudentShell::where(['lecture_id' => $lecture->id, 'user_id' => Auth::user()->id])->first();
-        $student_shells = $lecture->student_shell()->paginate(5);
-        return view("lecture/lecture", compact('lecture', 'student_shells', 'my_score'));
+        $my_score = StudentScore::where(['lecture_id' => $lecture->id, 'user_id' => Auth::user()->id])->first();
+        $student_scores = $lecture->student_score()->paginate(5);
+        return view("lecture/lecture", compact('lecture', 'student_scores', 'my_score'));
     }
     public function update(LectureRequest $request, Lecture $lecture)
     {

@@ -6,7 +6,7 @@ use App\Http\Requests\user_requests\LoginRequest;
 use App\Http\Requests\user_requests\RegisterRequest;
 use App\Http\Requests\user_requests\PasswordRequest;
 use App\Http\Requests\user_requests\UpdateUserRequest;
-use App\Models\StudentShell;
+use App\Models\StudentScore;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -57,11 +57,10 @@ class UserController extends Controller
         foreach ($admins as $admin) {
             try {
 //                $admin->notify(new EmployeeHired($details));
-//                davit!
-                Mail::raw("A new employee, Mr./Ms./Mrs. " . $user->name . "  has been registered.", function ($message) use ($admin) {
-                    $message->to($admin->email)
-                        ->subject("A new user has been registered");
-                });
+//                Mail::raw("A new employee, Mr./Ms./Mrs. " . $user->name . "  has been registered.", function ($message) use ($admin) {
+//                    $message->to($admin->email)
+//                        ->subject("A new user has been registered");
+//                });
             } catch (Throwable $e) {
                 error_log($e);
                 return false;
@@ -84,8 +83,8 @@ class UserController extends Controller
     {
         $this->authorize('lecturer');
         $lectures = Auth::user()->lecturer()->get()->pluck('id')->toArray();
-        $student_shells = StudentShell::whereIn('lecture_id', $lectures)->pluck('user_id')->toArray();
-        $users = User::whereIn('id', $student_shells)->paginate(10);
+        $student_scores = StudentScore::whereIn('lecture_id', $lectures)->pluck('user_id')->toArray();
+        $users = User::whereIn('id', $student_scores)->paginate(10);
         return view('user/index', compact('users'));
     }
     public function edit(User $user)

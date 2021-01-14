@@ -20,8 +20,8 @@ class CourseController extends Controller
     public function my_courses()
     {
         $lectures = Auth::user()->lecturer()->paginate(5);
-        $student_shells = Auth::user()->student_shells()->paginate(10);
-        return view('course/my_courses', compact('lectures', 'student_shells'));
+        $student_scores = Auth::user()->student_scores()->paginate(10);
+        return view('course/my_courses', compact('lectures', 'student_scores'));
     }
 
     public function create()

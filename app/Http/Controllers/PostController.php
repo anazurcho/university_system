@@ -50,12 +50,12 @@ class PostController extends Controller
             $post->approved = 1;
         }
         $post->save();
-//        if ($post->approved){
-//            Mail::raw("Post approved #". $post->name . " :)", function ($message) use ($post) {
-//                $message -> to($post->user()->email)
-//                    ->subject("Your post is approved #" . $post->id . "  #" . $post->title . " :)");
-//            });
-//        }
+        if ($post->approved){
+            Mail::raw("Post approved #". $post->name . " :)", function ($message) use ($post) {
+                $message -> to($post->user()->email)
+                    ->subject("Your post is approved #" . $post->id . "  #" . $post->title . " :)");
+            });
+        }
         response("ok", 200);
     }
     public function delete(Post $post)

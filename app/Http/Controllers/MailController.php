@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\MailRequest;
 use App\Models\Lecture;
-use App\Models\StudentShell;
+use App\Models\StudentScore;
 use App\Models\User;
-use http\Env\Request;
 use Illuminate\Support\Facades\Mail;
 
 class MailController extends Controller
@@ -14,8 +12,8 @@ class MailController extends Controller
     //
     public function create(Lecture $lecture)
     {
-        $student_shells = StudentShell::whereIn('lecture_id', $lecture)->pluck('user_id')->toArray();
-        $students = User::whereIn('id', $student_shells)->pluck('email')->implode(',');
+        $student_scores = StudentScore::whereIn('lecture_id', $lecture)->pluck('user_id')->toArray();
+        $students = User::whereIn('id', $student_scores)->pluck('email')->implode(',');
         return view('mail/create', compact('students', 'lecture'));
     }
 
