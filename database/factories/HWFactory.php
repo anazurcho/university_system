@@ -2,18 +2,18 @@
 
 namespace Database\Factories;
 
-use App\Models\Post;
-use App\Models\User;
+use App\Models\HW;
+use App\Models\Lecture;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class PostFactory extends Factory
+class HWFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Post::class;
+    protected $model = HW::class;
 
     /**
      * Define the model's default state.
@@ -25,10 +25,10 @@ class PostFactory extends Factory
         return [
             //
             'title' => $this ->faker->sentence,
-            'content' => $this->faker->sentence,
-            'likes' => $this->faker->randomDigit,
-            'approved' => $this->faker->boolean,
-            'user_id' => self::factoryForModel(User::class)
+            'content' => $this->faker->paragraph,
+            'due_to' => $this->faker->date('Y-m-d'),
+//            'due_to' => '2000-12-12',
+            'lecture_id' => self::factoryForModel(Lecture::class)
         ];
     }
 }

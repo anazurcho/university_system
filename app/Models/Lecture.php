@@ -27,4 +27,7 @@ class Lecture extends Model
     public function schedules(){
         return $this->hasMany(Schedule::class);
     }
+    public function hws(){
+        return $this->hasMany(Schedule::class);
+    }
 }

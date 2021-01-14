@@ -8,7 +8,7 @@
                 <div class="form-group">
                     <label for="name">mail</label>
                     <input type="text" class="form-control @error('mail') is-invalid @enderror"
-                           placeholder="mail" name="mail" value="{{$student->email}}"/>
+                           placeholder="mail" name="mail" value="{{$student->email}}" readonly/>
                     @error('mail')
                     <p class="text-danger">{{$errors->first('mail')}}</p>
                     @enderror

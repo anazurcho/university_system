@@ -10,8 +10,8 @@
                 </button>
             </div>
         @endcan
-        <h3>My Scores</h3>
-        <h3>Avg = {{$avg}}</h3>
+        <h3>Scores</h3>
+        <h3>Avg = {{ $avg ?? '' }}</h3>
         <div style="align-items:center;"> {{ $student_shells->links('vendor.pagination.bootstrap-4') }} </div>
         <table class="table">
             <thead class="thead-dark">
@@ -40,11 +40,11 @@
                     @endcan
                     <td>{{$student_shell->lecture->course->name}}</td>
                     <td>{{$student_shell->lecture->name}}</td>
-                        @if($student_shell->lecture->user)
-                            <td>{{$student_shell->lecture->user->name}}</td>
-                        @else
-                            <td>Not indicated</td>
-                        @endif
+                    @if($student_shell->lecture->user)
+                        <td>{{$student_shell->lecture->user->name}}</td>
+                    @else
+                        <td>Not indicated</td>
+                    @endif
                     <td>{{$student_shell->total_score}}</td>
                     @can('lecturer', Auth::user())
                         <td>

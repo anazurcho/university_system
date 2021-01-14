@@ -66,6 +66,11 @@
                 </form>
             </div>
         @endcan
+        <button type="button" class="btn btn-info">
+            <a class=" text-white" href="{{route('hws.open', $lecture->id)}}">
+                See HWs
+            </a>
+        </button>
         @can('student')
             @if($my_score)
                 <td><h3 class="text-danger">My Score - {{$my_score->total_score}}</h3></td>
@@ -81,6 +86,11 @@
                     <button type="button" class="btn btn-info">
                         <a class=" text-white" href="{{route('mail.create', $lecture)}}">
                             send mail to students
+                        </a>
+                    </button>
+                    <button type="button" class="btn btn-info">
+                        <a class=" text-white" href="{{route('hws.create', $lecture->id)}}">
+                            add hw
                         </a>
                     </button>
                 </div>

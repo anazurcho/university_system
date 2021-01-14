@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CourseTagController;
+use App\Http\Controllers\HWController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\PostCommentController;
 use App\Http\Controllers\PostController;
@@ -110,6 +111,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/post_tags/{post_tag}', [PostTagController::class, 'post_tag'])->name('post_tag');
 
     Route::post('/post_comments/{post}', [PostCommentController::class, 'save'])->name('post_comments.save');
+
+    Route::get('/hws/lecture/{lecture}', [HWController::class, 'index'])->name('hws.open');
+    Route::get('/hws/{lecture}/create', [HWController::class, 'create'])->name('hws.create');
+    Route::post('/hws/{lecture}/save', [HWController::class, 'save'])->name('hws.save');
+    Route::get('/hws/hw/{hw}', [HWController::class, 'hw'])->name('hw.open');
 
 });
 

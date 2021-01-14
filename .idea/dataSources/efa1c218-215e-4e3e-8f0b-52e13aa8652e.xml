@@ -1507,14 +1507,14 @@ post_tag_id</ColNames>
       <DataType>int(10) unsigned|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="441" parent="352" name="lecture_id">
+    <column id="441" parent="352" name="total_score">
       <Position>3</Position>
-      <DataType>int(10) unsigned|0s</DataType>
+      <DataType>double(8,2 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="442" parent="352" name="total_score">
+    <column id="442" parent="352" name="lecture_id">
       <Position>4</Position>
-      <DataType>double(8,2 digit)|0s</DataType>
+      <DataType>int(10) unsigned|0s</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="443" parent="352" name="created_at">
@@ -1583,17 +1583,21 @@ lecture_id</ColNames>
       <Position>9</Position>
       <DataType>timestamp|0s</DataType>
     </column>
-    <index id="457" parent="353" name="users_email_unique">
+    <column id="457" parent="353" name="image">
+      <Position>10</Position>
+      <DataType>varchar(255)|0s</DataType>
+    </column>
+    <index id="458" parent="353" name="users_email_unique">
       <ColNames>email</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="458" parent="353" name="PRIMARY">
+    <key id="459" parent="353" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="459" parent="353" name="users_email_unique">
+    <key id="460" parent="353" name="users_email_unique">
       <ColNames>email</ColNames>
       <UnderlyingIndexName>users_email_unique</UnderlyingIndexName>
     </key>
