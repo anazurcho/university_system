@@ -116,6 +116,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/hws/{lecture}/create', [HWController::class, 'create'])->name('hws.create');
     Route::post('/hws/{lecture}/save', [HWController::class, 'save'])->name('hws.save');
     Route::get('/hws/hw/{hw}', [HWController::class, 'hw'])->name('hw.open');
+    Route::get('/hws/file/{hw}', [HWController::class, 'hw_file'])->name('hw.file');
 
 });
 

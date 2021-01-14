@@ -22,12 +22,11 @@ class HWController extends Controller
 
     public function save(Request $request, Lecture $lecture)
     {
-//        dd($request->due_to);
         $hw = new Hw($request->all());
         $hw->lecture_id = $lecture->id;
         $hw->due_to = $request->due_to;
-        if($request->file('image')){
-            $imgName = Str::random(16).'.jpg';
+        if ($request->file('image')) {
+            $imgName = Str::random(16) . '.' . $request->file('image')->extension();
             $request->file('image')->move(public_path('hws'), $imgName);
             $hw->image = $imgName;
         }
@@ -35,9 +34,17 @@ class HWController extends Controller
         $hw->save();
         return redirect()->route('hws.open', $lecture->id);
     }
+
     public function hw(Hw $hw)
     {
         return view("hw/hw", compact('hw'));
     }
+
+    public function hw_file(Hw $hw)
+    {
+        $file_path = public_path('hws/' . $hw->image);
+        return response()->download($file_path);
+    }
+
 
 }

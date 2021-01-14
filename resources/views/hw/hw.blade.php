@@ -13,6 +13,12 @@
             </a>
         </h4>
         <div align="center">
+            @if($hw->image)
+            <div>
+                <img src="{{asset('hws/'.$hw->image)}}" alt="" width="50%">
+                <a class="text-danger" href={{route('hw.file', $hw->id)}}>Click to Download File </a>
+            </div>
+            @endif
             <h3 class="text-success">{{$hw->title}}</h3>
             <p>{{$hw->content}}</p>
         </div>

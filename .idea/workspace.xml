@@ -2,17 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1fcc7688-32f2-455c-b720-5fc1e88d87de" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/hw/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/hw/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/efa1c218-215e-4e3e-8f0b-52e13aa8652e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/efa1c218-215e-4e3e-8f0b-52e13aa8652e.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Lecture.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Lecture.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/PostFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/PostFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/lecture/lecture.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/lecture/lecture.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/mail/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/mail/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/mail/create_user.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/mail/create_user.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/student_shell/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/student_shell/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HWController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HWController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/Y6vEmq061mWsUdfb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/aT9YgN6HX7rMGtQb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/zAnVywdbqNP1Mmux.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/hw/hw.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/hw/hw.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -192,7 +188,8 @@
       <workItem from="1610367475302" duration="23409000" />
       <workItem from="1610401939547" duration="3201000" />
       <workItem from="1610486726108" duration="24275000" />
-      <workItem from="1610542190861" duration="18395000" />
+      <workItem from="1610542190861" duration="18726000" />
+      <workItem from="1610629342304" duration="1331000" />
     </task>
     <servers />
   </component>
