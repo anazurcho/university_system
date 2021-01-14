@@ -10,6 +10,8 @@
                 </button>
             </div>
         @endcan
+        <h3>My Scores</h3>
+        <h3>Avg = {{$avg}}</h3>
         <div style="align-items:center;"> {{ $student_shells->links('vendor.pagination.bootstrap-4') }} </div>
         <table class="table">
             <thead class="thead-dark">

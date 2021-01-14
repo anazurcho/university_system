@@ -10,6 +10,7 @@ use App\Models\StudentShell;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 
 class UserController extends Controller
@@ -47,8 +48,27 @@ class UserController extends Controller
         $user->status = 'student';
         $user->password = bcrypt($request->input('password'));
         $user->save();
+        $admins = User::where('status', 'admin')->get();
+        $details = [
+            'greetings' => 'Hello.',
+            'body' => "A new user, Mr./Ms./Mrs. " . $user->name . "  has been registered.",
+            'thanks' => 'Thank you.',
+        ];
+        foreach ($admins as $admin) {
+            try {
+//                $admin->notify(new EmployeeHired($details));
+//                davit!
+                Mail::raw("A new employee, Mr./Ms./Mrs. " . $user->name . "  has been registered.", function ($message) use ($admin) {
+                    $message->to($admin->email)
+                        ->subject("A new user has been registered");
+                });
+            } catch (Throwable $e) {
+                error_log($e);
+                return false;
+            }
+
+        }
         return view('user.login');
-//        return $this->postLogin($request);
     }
     public function logout()
     {
