@@ -17,6 +17,7 @@ class PostTagController extends Controller
 
     public function create()
     {
+        $this->authorize('admin');
         return view('tag/create');
     }
 
