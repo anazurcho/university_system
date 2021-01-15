@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PostRequest;
 use App\Models\Post;
 use App\Models\PostTag;
 use Illuminate\Http\Request;
@@ -33,7 +34,7 @@ class PostController extends Controller
         return view('post/create', compact('post_tags'));
     }
 
-    public function save(Request $request)
+    public function save(PostRequest $request)
     {
         $post = new Post($request->all());
         $post->user_id = Auth::id();

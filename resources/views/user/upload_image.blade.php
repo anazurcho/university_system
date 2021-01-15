@@ -1,8 +1,8 @@
 @extends("layout.layout")
 @section("content")
     <div class="container">
-        <h1>send mail to</h1>
-        <h3>lecture students #{{$user->name}}</h3>
+        <h1>Upload Image</h1>
+        <h3>#{{$user->name}}</h3>
         <form method="post" enctype="multipart/form-data" action="{{route('users.save_image', $user->id)}}">
             @csrf
             @method("PUT")

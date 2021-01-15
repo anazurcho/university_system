@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Http\Requests\lecture_requests;
+namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
-class LectureRequest extends FormRequest
+class PostRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,9 +25,8 @@ class LectureRequest extends FormRequest
     {
         return [
             //
-            'name' => ['required', 'min:3', Rule::unique('lectures')->ignore($this->id)],
-            'course_id' => 'required',
-            'user_id' => 'required',
+            'title' => 'required|min:3',
+            'content' => 'required|min:3',
         ];
     }
 }

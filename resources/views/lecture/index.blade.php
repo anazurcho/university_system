@@ -5,7 +5,7 @@
             <div style="margin-bottom:20px; align-items:center;">
                 <button type="button" class="btn btn-info">
                     <a class=" text-white" href="{{route('create.lecture')}}">
-                        add lecture
+                        Add lecture
                     </a>
                 </button>
             </div>

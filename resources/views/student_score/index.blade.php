@@ -38,7 +38,11 @@
                             <td>Not indicated</td>
                         @endif
                     @endcan
-                    <td>{{$student_score->lecture->course->name}}</td>
+                        @if($student_score->lecture->course)
+                            <td>{{$student_score->lecture->course->name}}</td>
+                        @else
+                            <td>Not indicated</td>
+                        @endif
                     <td>{{$student_score->lecture->name}}</td>
                     @if($student_score->lecture->user)
                         <td>{{$student_score->lecture->user->name}}</td>

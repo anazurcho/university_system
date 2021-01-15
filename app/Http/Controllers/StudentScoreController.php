@@ -43,7 +43,7 @@ class StudentScoreController extends Controller
         $student_score->user_id = Auth::user()->id;
         $student_score->total_score = 0;
         $student_score->save();
-        return redirect()->action([StudentScoreController::class, 'index']);
+        return redirect()->action([StudentScoreController::class, 'my_student_scores']);
     }
     public function change_score(Request  $request, StudentScore $student_score)
     {
