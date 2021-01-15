@@ -3,25 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1fcc7688-32f2-455c-b720-5fc1e88d87de" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CourseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CourseController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LectureController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LectureController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MailController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MailController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StudentShellController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/studentshell_requests/StudentShellRequest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Lecture.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Lecture.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/StudentShell.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/StudentShellFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/StudentScoreFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_26_235208_create_student_shells_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/course/course.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/course/course.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/course/my_courses.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/course/my_courses.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/lecture/lecture.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/lecture/lecture.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/student_shell/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/student_score/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/student_shell/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/student_score/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostTagController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostTagController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,7 +184,7 @@
       <workItem from="1610486726108" duration="24275000" />
       <workItem from="1610542190861" duration="18726000" />
       <workItem from="1610629342304" duration="5385000" />
-      <workItem from="1610663105806" duration="2106000" />
+      <workItem from="1610663105806" duration="4719000" />
     </task>
     <servers />
   </component>

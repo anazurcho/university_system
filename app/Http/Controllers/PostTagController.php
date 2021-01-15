@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PostTagRequest;
 use App\Models\PostTag;
 use Illuminate\Http\Request;
 
@@ -19,7 +20,7 @@ class PostTagController extends Controller
         return view('tag/create');
     }
 
-    public function save(Request  $request)
+    public function save(PostTagRequest  $request)
     {
         $post_tag = new PostTag($request->all());
         $post_tag->save();
